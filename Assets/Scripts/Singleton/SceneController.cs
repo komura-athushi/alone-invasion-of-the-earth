@@ -49,6 +49,7 @@ public class SceneController : MonoBehaviour
                     AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("NextScene");
                     enScene = EnScene.enScene_Title;
                 }
+                
             break;
         }
     }
