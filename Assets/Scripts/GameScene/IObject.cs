@@ -5,7 +5,6 @@ public interface IObject
         enAttribute_PlayerUpDown,
         enAttribute_None
     }
-
     // ダメージを与える
     public void Damage(int attack);
     // 無重力状態にさせる
