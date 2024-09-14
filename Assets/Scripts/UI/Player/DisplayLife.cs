@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DisplayLife : MonoBehaviour
 {
-    // ScriptableObject‚É‚·‚é—\’è
+    // ScriptableObjectã«ã™ã‚‹äºˆå®š
 
-    // UI—p‚ÌScriptableObject‚ª‚Ù‚µ‚¢
-    // ƒn[ƒg‚ÌŠÔŠu
+    // UIç”¨ã®ScriptableObjectãŒã»ã—ã„
+    // ãƒãƒ¼ãƒˆã®é–“éš”
     private float heartPaddingRatio = 1.3f;
 
     // private float playerHP = DataController.GetGameParam().playerHP; 
@@ -18,64 +17,89 @@ public class DisplayLife : MonoBehaviour
     {
         for (int i = 1; i <= playerHP; i++)
         {
-            // ƒn[ƒg‚Ì¶¬
+            // ãƒãƒ¼ãƒˆã®ç”Ÿæˆ
             var heart = Instantiate((GameObject)Resources.Load("UI_Life"));
 
-            // ƒn[ƒg‚É¯•Ê‚·‚é‚½‚ß‚Ì–½–¼
+            // ãƒãƒ¼ãƒˆã«è­˜åˆ¥ã™ã‚‹ãŸã‚ã®å‘½å
             heart.name = "heart" + i;
 
-            // Canvas‚ğe‚Éƒn[ƒg‚ğİ’u
+            // Canvasã‚’è¦ªã«ãƒãƒ¼ãƒˆã‚’è¨­ç½®
             heart.transform.SetParent(this.transform, false);
 
-            // ƒn[ƒg‚ğiŒÂ•ª‚¸‚ç‚·
+            // ãƒãƒ¼ãƒˆã‚’iå€‹åˆ†ãšã‚‰ã™
             heart.transform.position = new Vector3(heart.transform.position.x + i * heartPaddingRatio, heart.transform.position.y, heart.transform.position.z);
         }
     }
 
-    void DrawLife()
+    void IncreaseLife(int healHP)
     {
-        // ƒeƒXƒg—p‚ÅƒL[“ü—Í‚ğg—p‚µ‚Ä‚¢‚Ü‚·B
-        if (Input.GetKeyDown("u"))
+        for (int i = playerHP - healHP; i < playerHP; i++)
         {
-            // ƒeƒXƒg—p‰ñ•œ
-            playerHP++;
+            // 0ä»¥ä¸‹ã¯æç”»ã—ãªã„
+            if (i < 0)
+            {
+                continue;
+            }
 
-            // ƒn[ƒg‚Ì¶¬
+            // ãƒãƒ¼ãƒˆã®ç”Ÿæˆ
             var heart = Instantiate((GameObject)Resources.Load("UI_Life"));
 
-            // ƒn[ƒg‚É¯•Ê‚·‚é‚½‚ß‚Ì–½–¼
-            heart.name = "heart" + playerHP;
+            // ãƒãƒ¼ãƒˆã«è­˜åˆ¥ã™ã‚‹ãŸã‚ã®ï¼‹1å€‹åˆ†å‘½å
+            heart.name = "heart" + (i + 1);
 
-            // Canvas‚ğe‚Éƒn[ƒg‚ğİ’u
+            // Canvasã‚’è¦ªã«ãƒãƒ¼ãƒˆã‚’è¨­ç½®
             heart.transform.SetParent(this.transform, false);
 
-            // ƒn[ƒg‚ğiŒÂ•ª‚¸‚ç‚·
-            heart.transform.position = new Vector3(heart.transform.position.x + playerHP * heartPaddingRatio, heart.transform.position.y, heart.transform.position.z);
+            // ãƒãƒ¼ãƒˆã‚’iå€‹åˆ†ãšã‚‰ã™
+            heart.transform.position = new Vector3(heart.transform.position.x + (i + 1) * heartPaddingRatio, heart.transform.position.y, heart.transform.position.z);
         }
+    }
 
-        // ƒeƒXƒg—p‚ÅƒL[“ü—Í‚ğg—p‚µ‚Ä‚¢‚Ü‚·B
-        if (Input.GetKeyDown("j"))
+    void DecreaseLife(int damageHP)
+    {
+        for (int i = playerHP + damageHP; i > playerHP; i--)
         {
-            // ƒeƒXƒg—pƒ_ƒ[ƒW
-            playerHP--;
-
-            // ƒn[ƒg‚ğŒ¸‚ç‚·
-            Destroy(GameObject.Find("heart" + (playerHP + 1)));
+            // ãƒãƒ¼ãƒˆã‚’æ¸›ã‚‰ã™
+            Destroy(GameObject.Find("heart" + i));
+            if (i < 0)
+            {
+                break;
+            }
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // Å‰‚Ìƒn[ƒg‚ğ•`‰æ
+        // æœ€åˆã®ãƒãƒ¼ãƒˆã‚’æç”»
         InitializeDrawLife();
     }
 
     // Update is called once per frame
-    // ƒeƒXƒg‚Å‚ÍAFixedUpdate‚ğUpdate‚É‚µ‚Ä‚¢‚Ü‚µ‚½BFixed‚¾‚ÆƒŒƒXƒ|ƒ“ƒX‚ªˆ«‚­‚È‚é‚½‚ß‚Å‚·B
-    void FixedUpdate()
+    void Update()
     {
-        // playerLife‚ğí‚Éƒ`ƒFƒbƒN‚µ‚Äƒn[ƒg‚Ì”‚ğXV
-        DrawLife();
+        // playerHPãŒå¢—æ¸›ã™ã‚‹ãŸã³ã«å‘¼ã³å‡ºã™ã‚ˆã†ã«ã™ã‚‹ã€‚
+
+        // ãƒ†ã‚¹ãƒˆç”¨ã§ã‚­ãƒ¼å…¥åŠ›ã‚’ä½¿ç”¨ã—ã¦ã„ã¾ã™ã€‚
+        if (Input.GetKeyDown("u"))
+        {
+            // nãƒã‚¤ãƒ³ãƒˆå›å¾©ã•ã›ã‚‹ã€‚
+            int healHP = 2;
+            playerHP += healHP;
+
+            // å›å¾©ã—ãŸå·®åˆ†ã‚’intã§æ¸¡ã—ã¦ãã ã•ã„ã€‚
+            IncreaseLife(healHP);
+        }
+
+        // ãƒ†ã‚¹ãƒˆç”¨ã§ã‚­ãƒ¼å…¥åŠ›ã‚’ä½¿ç”¨ã—ã¦ã„ã¾ã™ã€‚
+        if (Input.GetKeyDown("j"))
+        {
+            // nãƒã‚¤ãƒ³ãƒˆãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ã‚‹ã€‚
+            int damageHP = 2;
+            playerHP -= damageHP;
+
+            // ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸå·®åˆ†ã‚’intã§æ¸¡ã—ã¦ãã ã•ã„ã€‚
+            DecreaseLife(damageHP);
+        }
     }
 }
