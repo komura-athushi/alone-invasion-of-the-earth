@@ -7,6 +7,7 @@ using UnityEngine;
 using PlayerController;
 public class Player : MonoBehaviour
 {
+    int hp;
     float moveSpeed;
     float jumpPower;
     float gravity;
@@ -18,17 +19,20 @@ public class Player : MonoBehaviour
     IController currentController;
     IController beforeController;
     PlayerInput input;
-
-    public float GetMoveSpeed() { return moveSpeed;}
-    public float GetGravity() {return gravity; }
-    public bool IsAttacking() {return isAttacking; }
+    //プロパティ
+    public int GetSetHp { get { return hp; } set { hp = value; } }
+    public float GetMoveSpeed() { return moveSpeed; }
+    public float GetGravity() { return gravity; }
+    public bool IsAttacking() { return isAttacking; }
     public bool IsZeroGraviting() { return isZeroGraviting; }
     public bool IsDamaged() { return isDamaged; }
-    public bool IsGrounded(){ return characterController2D.IsGrounded(); }
-    public Vector2 GetVelocity() { return velocity;} 
+    public bool IsGrounded() { return characterController2D.IsGrounded(); }
+    public Vector2 GetVelocity() { return velocity; }
+
     // Start is called before the first frame update
     void Start()
     {
+        hp = DataController.GetPlayerParam().Hp;
         moveSpeed = DataController.GetPlayerParam().MoveSpeed;
         gravity = DataController.GetGameParam().Gravity;
         // 自身にアタッチされているCharacterControllerを取得する
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
         beforeController.Enter(this, input);
         currentController = beforeController;
     }
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         ExecuteController();
     }
@@ -54,7 +58,7 @@ public class Player : MonoBehaviour
         input.HandleInput();
         currentController.Execute();
         IController newController = currentController.ChangeState();
-        if(! ReferenceEquals(currentController, newController))
+        if (!ReferenceEquals(currentController, newController))
         {
             currentController.Exit();
             beforeController = currentController;

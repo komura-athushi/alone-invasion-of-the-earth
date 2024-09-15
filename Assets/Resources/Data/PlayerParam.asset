@@ -19,6 +19,6 @@ MonoBehaviour:
   ReduceMoveSpeedForJumping: 0.4
   AirResistanceForJumping: 0.995
   Id: 
-  Hp: 0
+  Hp: 5
   Attack: 0
   Defense: 0

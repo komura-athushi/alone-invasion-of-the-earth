@@ -1,39 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class DisplayLife : MonoBehaviour
+public class DisplayHP : MonoBehaviour
 {
-    // ScriptableObjectにする予定
-
-    // UI用のScriptableObjectがほしい
     // ハートの間隔
     private float heartPaddingRatio = 1.3f;
+    // 値が変わる前のHP
+    private int previousHp;
+    protected Player player;
 
-    // private float playerHP = DataController.GetGameParam().playerHP; 
-    private int playerHP = 5;
-
-    void InitializeDrawLife()
+    // HPを増やす表示。初期のハート表示も含まれる。
+    void IncreaseHp(int _previousHp, int _currentHp)
     {
-        for (int i = 1; i <= playerHP; i++)
-        {
-            // ハートの生成
-            var heart = Instantiate((GameObject)Resources.Load("UI_Life"));
-
-            // ハートに識別するための命名
-            heart.name = "heart" + i;
-
-            // Canvasを親にハートを設置
-            heart.transform.SetParent(this.transform, false);
-
-            // ハートをi個分ずらす
-            heart.transform.position = new Vector3(heart.transform.position.x + i * heartPaddingRatio, heart.transform.position.y, heart.transform.position.z);
-        }
-    }
-
-    void IncreaseLife(int healHP)
-    {
-        for (int i = playerHP - healHP; i < playerHP; i++)
+        for (int i = _previousHp; i < _currentHp; i++)
         {
             // 0以下は描画しない
             if (i < 0)
@@ -42,7 +23,7 @@ public class DisplayLife : MonoBehaviour
             }
 
             // ハートの生成
-            var heart = Instantiate((GameObject)Resources.Load("UI_Life"));
+            var heart = Instantiate((GameObject)Resources.Load("UI_Hp"));
 
             // ハートに識別するための＋1個分命名
             heart.name = "heart" + (i + 1);
@@ -55,9 +36,10 @@ public class DisplayLife : MonoBehaviour
         }
     }
 
-    void DecreaseLife(int damageHP)
+    // HPの消滅
+    void DecreaseHp(int _previousHp, int _currentHp)
     {
-        for (int i = playerHP + damageHP; i > playerHP; i--)
+        for (int i = _previousHp; i > _currentHp; i--)
         {
             // ハートを減らす
             Destroy(GameObject.Find("heart" + i));
@@ -68,38 +50,61 @@ public class DisplayLife : MonoBehaviour
         }
     }
 
+    // HPの表示を変動させる。
+    void ChangeHp(int _previousHp, int _currentHp)
+    {
+        if (_previousHp < _currentHp)
+        {
+            IncreaseHp(_previousHp, _currentHp);
+        }
+
+        if (_previousHp > _currentHp)
+        {
+            DecreaseHp(_previousHp, _currentHp);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        // 最初のハートを描画
-        InitializeDrawLife();
+        player = GameObject.Find("Player").GetComponent<Player>();
+        previousHp = player.GetSetHp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // playerHPが増減するたびに呼び出すようにする。
+        // player.GetSetHpが増減するたびに呼び出すようにする。
 
-        // テスト用でキー入力を使用しています。
+        // 前のフレームから値が変わったかどうか？
+        if (previousHp != player.GetSetHp)
+        {
+            try
+            {
+                ChangeHp(previousHp, player.GetSetHp); // 変数が変わったときの処理の呼び出し
+            }
+            finally
+            {
+                // 次の判定のために今の値を覚えておく
+                previousHp = player.GetSetHp;
+            }
+        }
+
+        // テスト用です。削除予定
         if (Input.GetKeyDown("u"))
         {
             // nポイント回復させる。
             int healHP = 2;
-            playerHP += healHP;
-
-            // 回復した差分をintで渡してください。
-            IncreaseLife(healHP);
+            player.GetSetHp += healHP;
         }
 
-        // テスト用でキー入力を使用しています。
+        // テスト用です。削除予定
         if (Input.GetKeyDown("j"))
         {
             // nポイントダメージを受ける。
             int damageHP = 2;
-            playerHP -= damageHP;
-
-            // ダメージを受けた差分をintで渡してください。
-            DecreaseLife(damageHP);
+            player.GetSetHp -= damageHP;
         }
     }
 }
