@@ -10,7 +10,7 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private bool collisionWall;
     private bool collisionCeiling;
-    public Vector2 collisionNormal;
+    private Vector2 collisionNormal;
     private ContactFilter2D contactFilter2D = default;
     Rigidbody2D rigidbody_2D;
     // 地面にいるならtrue
