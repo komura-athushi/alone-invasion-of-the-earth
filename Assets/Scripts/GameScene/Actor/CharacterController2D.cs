@@ -10,6 +10,7 @@ public class CharacterController2D : MonoBehaviour
     private bool grounded;
     private bool collisionWall;
     private bool collisionCeiling;
+    public Vector2 collisionNormal;
     private ContactFilter2D contactFilter2D = default;
     Rigidbody2D rigidbody_2D;
     // 地面にいるならtrue
@@ -31,6 +32,11 @@ public class CharacterController2D : MonoBehaviour
     public Vector2 GetVelocity()
     {
         return velocity;
+    }
+    // 衝突した物体の法線を取得
+    public Vector2 GetCollisionNormal()
+    {
+        return collisionNormal;
     }
     private void Awake()
     {
@@ -62,6 +68,8 @@ public class CharacterController2D : MonoBehaviour
                 {
                     collisionWall = true;
                     this.velocity.x = 0.0f;
+                    collisionNormal = colliderDistance.normal;
+                    break;
                 }
             }
         }
@@ -72,11 +80,11 @@ public class CharacterController2D : MonoBehaviour
         Vector2 verticalVelocity = velocity;
         if (verticalVelocity.y <= 0.0f)
         {
-            verticalVelocity.y -= 0.01f;
+            verticalVelocity.y -= 0.005f;
         }
         else
         {
-            verticalVelocity.y += 0.01f;
+            verticalVelocity.y += 0.005f;
         }
         Vector2 position = transform.position;
 
@@ -98,12 +106,15 @@ public class CharacterController2D : MonoBehaviour
                 {
                     grounded = true;
                     this.velocity.y = 0.0f;
+                    break;
                 }
                 // 天井に衝突
                 else if (angle > 160.0f)
                 {
                     collisionCeiling = true;
                     this.velocity.y = 0.0f;
+                    collisionNormal = colliderDistance.normal;
+                    break;
                 }
             }
         }
@@ -116,6 +127,7 @@ public class CharacterController2D : MonoBehaviour
         grounded = false;
         collisionWall = false;
         collisionCeiling = false;
+        collisionNormal = Vector2.zero;
 
         CollisionSide(velocity);
         CollisionVertical(velocity);
