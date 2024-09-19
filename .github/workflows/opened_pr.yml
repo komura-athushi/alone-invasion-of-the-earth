@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "${{ fromJson(github.event.pull_request) }}"
+          echo "${{ toJson(github.event.pull_request) }}"
 
       # - name: Discord Message Notify
       #   uses: appleboy/discord-action@v1.0.0
