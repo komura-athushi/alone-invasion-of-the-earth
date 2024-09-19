@@ -1,0 +1,17 @@
+name: Notify Discord
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ opened, reopened ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord Message Notify
+        uses: appleboy/discord-action@v1.0.0
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          message: " ${{  }}"
