@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     float moveSpeed;
     float jumpPower;
     float gravity;
-    Vector2 velocity = Vector2.zero;
     bool isAttacking = false;
     bool isZeroGraviting = false;
     bool isDamaged = false;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
     IController currentController;
     IController beforeController;
     PlayerInput input;
+    int hp;
 
     public float GetMoveSpeed() { return moveSpeed;}
     public float GetGravity() {return gravity; }
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public bool IsZeroGraviting() { return isZeroGraviting; }
     public bool IsDamaged() { return isDamaged; }
     public bool IsGrounded(){ return characterController2D.IsGrounded(); }
-    public Vector2 GetVelocity() { return velocity;} 
+    public Vector2 GetVelocity() { return characterController2D.GetVelocity();} 
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
     }
     public void MovePlayer(Vector2 velocity)
     {
-        this.velocity = velocity;
         characterController2D.Move(velocity);
     }
 
