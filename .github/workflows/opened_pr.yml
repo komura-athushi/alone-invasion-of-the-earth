@@ -1,0 +1,17 @@
+name: Opened PR
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ opened, reopened ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord Message Notify
+        uses: appleboy/discord-action@v1.0.0
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          message: "<@&${{ vars.PROGRAMMER_ID }}>\n${{ github.event.pull_request.user.login }} opened Pull Request.\nPlease review the [Pull Request(title: ${{ github.event.pull_request.title }})](<${{ github.event.pull_request.html_url }}>)!"

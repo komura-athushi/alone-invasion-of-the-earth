@@ -1,0 +1,18 @@
+name: Merged PR
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ closed ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord Message Notify
+        if: ${{ github.event.pull_request.merged == true }}
+        uses: appleboy/discord-action@v1.0.0
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          message: "<@&${{ vars.PROGRAMMER_ID }}>\n[Pull Request(title: ${{ github.event.pull_request.title }})](<${{ github.event.pull_request.html_url }}>) was merged!"
