@@ -20,5 +20,6 @@ MonoBehaviour:
   AirResistanceForJumping: 0.995
   Id: 
   Hp: 5
+  Skill1: 100
   Attack: 0
   Defense: 0
