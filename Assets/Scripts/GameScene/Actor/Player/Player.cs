@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     PlayerInput input;
     //プロパティ
     public int GetSetHp { get { return hp; } set { hp = value; } }
-    public int GetSetSkill1 { get { return skill1; } set { skill1 = value; } }
+    public int GetSkill1() { return skill1; }
     public float GetMoveSpeed() { return moveSpeed; }
     public float GetGravity() { return gravity; }
     public bool IsAttacking() { return isAttacking; }
