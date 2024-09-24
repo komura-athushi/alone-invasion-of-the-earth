@@ -41,7 +41,7 @@ public class DisplaySkillGauge : MonoBehaviour
 
     void UseGauge(Image skillGauge)
     {
-        // ゲージが満たされていたら消費するようにする
+        // ゲージが満たされていたら１本を消費する
         if (skillGauge.fillAmount == 1.0f)
         {
             skillGauge.fillAmount -= 1.0f;
@@ -56,6 +56,8 @@ public class DisplaySkillGauge : MonoBehaviour
         InitializeSkillGauge();
         skillGauge1 = GameObject.Find("SkillGauge1").GetComponent<Image>();
         skillGauge2 = GameObject.Find("SkillGauge2").GetComponent<Image>();
+
+        // 正規化されているので1.0でゲージがMAXになる
         skillGauge1.fillAmount = 1.0f;
         skillGauge2.fillAmount = 1.0f;
     }
@@ -72,12 +74,14 @@ public class DisplaySkillGauge : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             UseGauge(skillGauge1);
+            Debug.Log("1キーを押しました。スキル1を発動します。");
         }
 
         // テスト用です。削除予定
         if (Input.GetKeyDown("2"))
         {
             UseGauge(skillGauge2);
+            Debug.Log("2キーを押しました。スキル2を発動します。");
         }
 
     }
