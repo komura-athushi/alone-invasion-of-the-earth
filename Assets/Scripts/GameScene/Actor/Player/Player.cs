@@ -8,7 +8,6 @@ using PlayerController;
 public class Player : MonoBehaviour
 {
     int hp;
-    int skill1;
     float moveSpeed;
     float jumpPower;
     float gravity;
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour
     PlayerInput input;
     //プロパティ
     public int GetSetHp { get { return hp; } set { hp = value; } }
-    public int GetSkill1() { return skill1; }
     public float GetMoveSpeed() { return moveSpeed; }
     public float GetGravity() { return gravity; }
     public bool IsAttacking() { return isAttacking; }
@@ -35,7 +33,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         hp = DataController.GetPlayerParam().Hp;
-        skill1 = DataController.GetPlayerParam().Skill1;
         moveSpeed = DataController.GetPlayerParam().MoveSpeed;
         gravity = DataController.GetGameParam().Gravity;
         // 自身にアタッチされているCharacterControllerを取得する
