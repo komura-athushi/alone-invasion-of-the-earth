@@ -17,7 +17,8 @@ namespace BotController
         static Vector2 botLocalPosition_UpLeft = new Vector2(-0.7f, 0.7f);
         static Vector2 botLocalPosition_DownRight = new Vector2(0.7f, -0.7f);
         static Vector2 botLocalPosition_DownLeft = new Vector2(-0.7f, -0.7f);
-        enum Direction{
+        enum Direction
+        {
             DIRECTION_UP,
             DIRECTION_UPRIGHT,
             DIRECTION_RIGHT,
@@ -32,6 +33,8 @@ namespace BotController
         private Vector2 cursorPosition;
         private GameObject bot;
         private Transform botTransform;
+        private GameObject player;
+        private Player playerPlayer;
         private Transform playerTransform;
         private Vector3 diff;
         private float angle;
@@ -40,7 +43,9 @@ namespace BotController
         {
             bot = this.gameObject;
             botTransform = bot.transform;
-            playerTransform = botTransform.parent.gameObject.transform;
+            player = botTransform.parent.gameObject;
+            playerPlayer = player.GetComponent<Player>();
+            playerTransform = player.transform;
         }
 
         // Update is called once per frame
@@ -51,7 +56,7 @@ namespace BotController
 
         void SetPosition()
         {
-            switch(devideDirection(GetCursorAngle()))
+            switch (devideDirection(GetCursorAngle()))
             {
                 case Direction.DIRECTION_UP:
                     botTransform.localPosition = botLocalPosition_Up * botLength;
@@ -90,37 +95,67 @@ namespace BotController
         }
         Direction devideDirection(float angle)
         {
-            if(-22.5 <= angle && angle <= 22.5)
+            if (playerPlayer.IsGrounded())
             {
-                return Direction.DIRECTION_UP;
-            } 
-            else if(22.5 < angle && angle <= 67.5)
-            {
-                return Direction.DIRECTION_UPRIGHT;
+                #region 地面接触時
+                if (-22.5 <= angle && angle <= 22.5)
+                {
+                    return Direction.DIRECTION_UP;
+                }
+                else if (22.5 < angle && angle <= 67.5)
+                {
+                    return Direction.DIRECTION_UPRIGHT;
+                }
+                else if (67.5 < angle && angle <= 180)
+                {
+                    return Direction.DIRECTION_RIGHT;
+                }
+                else if (-180 <= angle && angle < -67.5)
+                {
+                    return Direction.DIRECTION_LEFT;
+                }
+                else
+                {
+                    return Direction.DIRECTION_UPLEFT;
+                }
+                #endregion
             }
-            else if(67.5 < angle && angle <= 112.5)
+            else
             {
-                return Direction.DIRECTION_RIGHT;
-            } 
-            else if(112.5 < angle && angle <= 157.5)
-            {
-                return Direction.DIRECTION_DOWNRIGHT;
-            } 
-            else if(157.5 < angle || angle < -157.5)
-            {
-                return Direction.DIRECTION_DOWN;
-            } 
-            else if(-157.5 <= angle && angle < -112.5)
-            {
-                return Direction.DIRECTION_DOWNLEFT;
-            } 
-            else if(-112.5 <= angle && angle < -67.5)
-            {
-                return Direction.DIRECTION_LEFT;
-            } 
-            else 
-            {
-            return Direction.DIRECTION_UPLEFT;
+                #region 地面非接触時
+                if (-22.5 <= angle && angle <= 22.5)
+                {
+                    return Direction.DIRECTION_UP;
+                }
+                else if (22.5 < angle && angle <= 67.5)
+                {
+                    return Direction.DIRECTION_UPRIGHT;
+                }
+                else if (67.5 < angle && angle <= 112.5)
+                {
+                    return Direction.DIRECTION_RIGHT;
+                }
+                else if (112.5 < angle && angle <= 157.5)
+                {
+                    return Direction.DIRECTION_DOWNRIGHT;
+                }
+                else if (157.5 < angle || angle < -157.5)
+                {
+                    return Direction.DIRECTION_DOWN;
+                }
+                else if (-157.5 <= angle && angle < -112.5)
+                {
+                    return Direction.DIRECTION_DOWNLEFT;
+                }
+                else if (-112.5 <= angle && angle < -67.5)
+                {
+                    return Direction.DIRECTION_LEFT;
+                }
+                else
+                {
+                    return Direction.DIRECTION_UPLEFT;
+                }
+                #endregion
             }
         }
     }
