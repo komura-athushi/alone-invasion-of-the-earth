@@ -51,12 +51,6 @@ public class DisplaySkillGauge : MonoBehaviour
     {
         for (int i = 0; i < skillGauge.Length; i++)
         {
-            // 0以下は描画しない
-            if (i < 0)
-            {
-                continue;
-            }
-
             // スキルゲージの生成
             var uiSkillGauge = Instantiate((GameObject)Resources.Load("UI_SkillGauge"));
 
