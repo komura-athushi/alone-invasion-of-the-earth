@@ -18,6 +18,9 @@ public class DisplaySkillGauge : MonoBehaviour
     // 現在のゲージの溜まっている値
     int[] currentSkillGauge;
 
+    // 使用直前のゲージの溜まっている値
+    int[] previousSkillGauge;
+
     // ゲージを使用する際に必要な値
     int[] requiredSkillGauge;
 
@@ -32,15 +35,19 @@ public class DisplaySkillGauge : MonoBehaviour
         maxSkillNumber = player.MaxSkillNumber();
         skillGauge = new Image[maxSkillNumber];
         currentSkillGauge = new int[maxSkillNumber];
+        previousSkillGauge = new int[maxSkillNumber];
         requiredSkillGauge = new int[maxSkillNumber];
 
         for (int i = 0; i < skillGauge.Length; i++)
         {
             // i番目のスキルゲージを取得
-            currentSkillGauge[i] = player.CurrentSkillGauge();
+            currentSkillGauge[i] = player.CurrentSkillGauge()[i];
+
+            // 直前のスキルの値を取得
+            currentSkillGauge[i] = currentSkillGauge[i];
 
             // i番目のスキルに必要なゲージを取得
-            requiredSkillGauge[i] = player.RequiredSkillGauge();
+            requiredSkillGauge[i] = player.RequiredSkillGauge()[i];
         }
     }
 
@@ -105,6 +112,43 @@ public class DisplaySkillGauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // マージの際に消す テスト用自動回復
+        for (int i = 0; i < skillGauge.Length; i++)
+        {
+            if (currentSkillGauge[i] < requiredSkillGauge[i])
+            {
+                currentSkillGauge[i]++;
+            }
+        }
+
+        for (int i = 0; i < skillGauge.Length; i++)
+        {
+            // 前のフレームから値が変わったかどうか？
+            if (player.CurrentSkillGauge()[i] <= 0 && previousSkillGauge[i] != player.CurrentSkillGauge()[i])
+            {
+                try
+                {
+                    UseSkillGauge(i);
+                }
+                finally
+                {
+                    // 次の判定のために今の値を覚えておく
+                    previousSkillGauge[i] = player.CurrentSkillGauge()[i];
+                }
+            }
+        }
         DrawCurrentSkillGauge();
+
+        // マージの際に消す
+        if (Input.GetKeyDown("1"))
+        {
+
+            UseSkillGauge(0);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+
+            UseSkillGauge(1);
+        }
     }
 }

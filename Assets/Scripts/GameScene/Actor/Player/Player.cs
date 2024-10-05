@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 {
     int hp;
     int maxSkillNumber;
-    int currentSkillGauge;
-    int requiredSkillGauge;
+    int[] currentSkillGauge;
+    int[] requiredSkillGauge;
     float moveSpeed;
     float jumpPower;
     float gravity;
@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     //プロパティ
     public int GetSetHp { get { return hp; } set { hp = value; } }
     public int MaxSkillNumber() { return maxSkillNumber; }
-    public int CurrentSkillGauge() { return currentSkillGauge; }
-    public int RequiredSkillGauge() { return requiredSkillGauge; }
+    public int[] CurrentSkillGauge() { return currentSkillGauge; }
+    public int[] RequiredSkillGauge() { return requiredSkillGauge; }
     public float GetMoveSpeed() { return moveSpeed; }
     public float GetGravity() { return gravity; }
     public bool IsAttacking() { return isAttacking; }
