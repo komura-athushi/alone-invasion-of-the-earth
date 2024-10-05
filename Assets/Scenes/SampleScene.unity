@@ -406,7 +406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 2067953736}
-  playerTransform: {fileID: 1142368323}
 --- !u!4 &556251231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2341654223081071728, guid: ca9015c7225028b47ad9a72ed1387e01, type: 3}
@@ -482,6 +481,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca9015c7225028b47ad9a72ed1387e01, type: 3}
+--- !u!4 &584024929 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2341654223081071728, guid: ca9015c7225028b47ad9a72ed1387e01, type: 3}
+  m_PrefabInstance: {fileID: 584024928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &619448278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -716,7 +720,7 @@ Transform:
   - {fileID: 88680910}
   - {fileID: 556251231}
   - {fileID: 134690284}
-  - {fileID: 2059403836}
+  - {fileID: 584024929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1083347255

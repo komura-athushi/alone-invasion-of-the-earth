@@ -8,7 +8,6 @@ namespace BotController
     public class Bot : MonoBehaviour
     {
         #region 方向定数の宣言
-        static float botLength = 2.0f;
         static Vector2 botLocalPosition_Up = Vector2.up;
         static Vector2 botLocalPosition_Down = Vector2.down;
         static Vector2 botLocalPosition_Right = Vector2.right;
@@ -31,20 +30,22 @@ namespace BotController
         #endregion
         [SerializeField] private Cursor cursor;
         private Vector2 cursorPosition;
-        private GameObject bot;
+        private GameObject botGameObject;
         private Transform botTransform;
+        private float botDistance;
         private GameObject player;
-        private Player playerPlayer;
+        private Player playerPlayerScript;
         private Transform playerTransform;
         private Vector3 diff;
         private float angle;
         // Start is called before the first frame update
         void Start()
         {
-            bot = this.gameObject;
-            botTransform = bot.transform;
+            botGameObject = this.gameObject;
+            botTransform = botGameObject.transform;
+            botDistance = DataController.GetPlayerParam().BotDistance;
             player = botTransform.parent.gameObject;
-            playerPlayer = player.GetComponent<Player>();
+            playerPlayerScript = player.GetComponent<Player>();
             playerTransform = player.transform;
         }
 
@@ -59,28 +60,28 @@ namespace BotController
             switch (devideDirection(GetCursorAngle()))
             {
                 case Direction.DIRECTION_UP:
-                    botTransform.localPosition = botLocalPosition_Up * botLength;
+                    botTransform.localPosition = botLocalPosition_Up * botDistance;
                     break;
                 case Direction.DIRECTION_UPRIGHT:
-                    botTransform.localPosition = botLocalPosition_UpRight * botLength;
+                    botTransform.localPosition = botLocalPosition_UpRight * botDistance;
                     break;
                 case Direction.DIRECTION_RIGHT:
-                    botTransform.localPosition = botLocalPosition_Right * botLength;
+                    botTransform.localPosition = botLocalPosition_Right * botDistance;
                     break;
                 case Direction.DIRECTION_DOWNRIGHT:
-                    botTransform.localPosition = botLocalPosition_DownRight * botLength;
+                    botTransform.localPosition = botLocalPosition_DownRight * botDistance;
                     break;
                 case Direction.DIRECTION_DOWN:
-                    botTransform.localPosition = botLocalPosition_Down * botLength;
+                    botTransform.localPosition = botLocalPosition_Down * botDistance;
                     break;
                 case Direction.DIRECTION_DOWNLEFT:
-                    botTransform.localPosition = botLocalPosition_DownLeft * botLength;
+                    botTransform.localPosition = botLocalPosition_DownLeft * botDistance;
                     break;
                 case Direction.DIRECTION_LEFT:
-                    botTransform.localPosition = botLocalPosition_Left * botLength;
+                    botTransform.localPosition = botLocalPosition_Left * botDistance;
                     break;
                 case Direction.DIRECTION_UPLEFT:
-                    botTransform.localPosition = botLocalPosition_UpLeft * botLength;
+                    botTransform.localPosition = botLocalPosition_UpLeft * botDistance;
                     break;
             }
         }
@@ -95,7 +96,7 @@ namespace BotController
         }
         Direction devideDirection(float angle)
         {
-            if (playerPlayer.IsGrounded())
+            if (playerPlayerScript.IsGrounded())
             {
                 #region 地面接触時
                 if (-22.5 <= angle && angle <= 22.5)
