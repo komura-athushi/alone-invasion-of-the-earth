@@ -13,7 +13,8 @@ public class InputController : MonoBehaviour
         enKey_PlayerUp,
         enKey_PlayerDown,
         enKey_PlayerJump,
-        enKey_Decision
+        enKey_Decision,
+        enKey_Attack
     };
     //シングルトン
     private static InputController instance = null;
@@ -83,6 +84,9 @@ public class InputController : MonoBehaviour
                 break;
             case EnKey.enKey_Decision:
                 result = Input.GetKeyDown(KeyCode.Return);
+                break;
+                case EnKey.enKey_Attack:
+                result = Input.GetMouseButtonDown(0);
                 break;
         }
         return result;

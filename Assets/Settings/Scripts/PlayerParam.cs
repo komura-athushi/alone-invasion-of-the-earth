@@ -16,4 +16,5 @@ public class PlayerParam : ScriptableObject
     public int Hp;
     public int Attack;
     public int Defense;
+    public float BotDistance;
 }
