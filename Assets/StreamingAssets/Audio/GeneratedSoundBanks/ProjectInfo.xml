@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="HitoriPlanet_Wwise" GUID="{44E7AEA4-0F82-47FB-B5AF-B5E0BC54E574}" Generator="2023.1.7.8574"/>
+	<CacheRoot>../../../../HitoriPlanet_Wwise/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{521F496F-59B2-4636-A26B-DB2149DCEFF8}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../HitoriPlanet_Wwise/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{AEA7602C-F5D7-4364-BFEE-1522DE95A5AB}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../HitoriPlanet_Wwise/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{D016EF92-EBC3-4DA7-80A2-F45E104847CA}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{33BAB8BD-612D-F8A6-CFF9-BD77D7C28232}</FileHash>
+</ProjectInfo>

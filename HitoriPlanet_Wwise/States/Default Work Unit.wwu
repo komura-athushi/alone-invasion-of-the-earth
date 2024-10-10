@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DFF026E8-B101-4073-914B-EA8FF0E88726}" SchemaVersion="119">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{DFF026E8-B101-4073-914B-EA8FF0E88726}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="ZeroGravity_Filter" ID="{AE8E0EB6-2797-4C2F-A3F6-637C7EBDB26A}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{B8BCE863-AFCA-4072-872E-E39AA438DA8F}"/>
+						<State Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}"/>
+						<State Name="Stop" ID="{3266031A-B14C-4BFD-A765-8C97CDF37FA7}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}"/>
+							<EndState Name="Stop" ID="{3266031A-B14C-4BFD-A765-8C97CDF37FA7}"/>
+							<Time>0.1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

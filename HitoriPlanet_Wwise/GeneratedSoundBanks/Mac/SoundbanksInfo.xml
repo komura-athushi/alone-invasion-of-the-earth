@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E37FB80A-44B9-C5FB-A5A3-134250587494}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="412724365" Name="BGM"/>
+				<Bus Id="1584861537" Name="SE"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3120073052" Name="ZeroGravity_Filter">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="788884573" Name="Stop"/>
+						<State Id="1256202815" Name="Play"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{62DFB0C5-CB91-E118-106F-526F371F758B}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="239877686" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BossMaster_start~loopstart.wav</ShortName>
+					<CachePath>SFX/BossMaster_start~loopstart_818F3B66.wem</CachePath>
+				</File>
+				<File Id="463791110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ZeroGravity_2_0926.wav</ShortName>
+					<CachePath>SFX/ZeroGravity_2_0926_71DEF3B6.wem</CachePath>
+				</File>
+				<File Id="734819284" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Critical_2_Mono.wav</ShortName>
+					<CachePath>SFX/Critical_2_Mono_818F3B66.wem</CachePath>
+				</File>
+				<File Id="872355316" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BossMaster_loop_wav.wav</ShortName>
+					<CachePath>SFX/BossMaster_loop_wav_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2566365264" Name="Play_BGM_Boss" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="239877686"/>
+						<MediaRef Id="872355316"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3120073052" Id="1256202815" Name="Play"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2841555105" Name="Play_Critical" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="734819284"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1780849254" Name="Play_ZeroGravity" DurationType="OneShot" DurationMin="7" DurationMax="7">
+					<MediaRefs>
+						<MediaRef Id="463791110"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3120073052" Id="788884573" Name="Stop"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1104956480" Name="Stop_ZeroGravity" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3120073052" Id="1256202815" Name="Play"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="3120073052" Name="ZeroGravity_Filter">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="788884573" Name="Stop"/>
+						<State Id="1256202815" Name="Play"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{B904189B-507F-0C1C-35B6-AD011AE3431D}</FileHash>
+</SoundBanksInfo>

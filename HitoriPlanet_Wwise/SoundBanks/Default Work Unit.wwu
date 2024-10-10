@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F8C2E00A-6DC2-4BBE-B1FD-C34E80E60032}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{F8C2E00A-6DC2-4BBE-B1FD-C34E80E60032}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{053C4A9F-D195-4A10-B196-3D5576733062}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_BGM_Boss" ID="{3E2F7DAC-04E0-4032-B017-6D16AF15EAFC}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Critical" ID="{15AD4BA0-F1EC-4189-8524-E7390B25D494}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_ZeroGravity" ID="{7A80AA2C-1C0A-43D2-8AA8-481798F659EE}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_ZeroGravity" ID="{3A9F8935-1C35-4BE9-8314-8A01BF406508}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

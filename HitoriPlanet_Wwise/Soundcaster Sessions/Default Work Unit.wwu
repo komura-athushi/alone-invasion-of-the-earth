@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E167F267-C98D-46AA-9A45-702563B335E9}" SchemaVersion="119">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{E167F267-C98D-46AA-9A45-702563B335E9}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="boss" ID="{8D573AFF-E074-4AA8-8A79-005EC98A69DA}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_ZeroGravity" ID="{7A80AA2C-1C0A-43D2-8AA8-481798F659EE}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_ZeroGravity" ID="{3A9F8935-1C35-4BE9-8314-8A01BF406508}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Critical" ID="{15AD4BA0-F1EC-4189-8524-E7390B25D494}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_BGM_Boss" ID="{3E2F7DAC-04E0-4032-B017-6D16AF15EAFC}" WorkUnitID="{4D451B2C-295B-430A-B34F-FCBB205F4178}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

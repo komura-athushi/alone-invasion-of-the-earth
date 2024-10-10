@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{16992260-B9DC-4825-84DF-6A44A5464BB7}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{16992260-B9DC-4825-84DF-6A44A5464BB7}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="SE" ID="{9FC020AB-D215-4F22-835D-38C978A4D1EF}" ShortID="655118090">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SE" ID="{F3169B57-7DB2-487D-8637-DCA3722BC02A}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Critical_2_Mono" ID="{D029B9FA-323D-45D1-B69C-18CEC832AF8B}" ShortID="859501762">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Critical_2_Mono" ID="{7E18409D-4D59-4A0D-A052-485683519337}">
+									<Language>SFX</Language>
+									<AudioFile>Critical_2_Mono.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="734819284"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Critical_2_Mono" ID="{7E18409D-4D59-4A0D-A052-485683519337}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ZeroGravity_2_0926" ID="{D8E13D22-0647-4C09-A357-3ED3F2193057}" ShortID="792842374">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ZeroGravity_2_0926" ID="{21BC495D-27A7-4D27-BD1A-493E0F64D0B6}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.014695591322603"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>ZeroGravity_2_0926.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="463791110"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ZeroGravity_2_0926" ID="{21BC495D-27A7-4D27-BD1A-493E0F64D0B6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<RandomSequenceContainer Name="BGM" ID="{7A0571F7-72A1-4E27-B059-58B8427C8351}" ShortID="469841598">
+					<PropertyList>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="BGM" ID="{C7D30412-12D9-473B-9AD6-7C0FBA62C70C}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BossMaster_start~loopstart" ID="{419CC810-1CD9-49DE-9241-3E5901886888}" ShortID="958490123">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossMaster_start~loopstart" ID="{F5F1888D-3363-4B3A-823B-284B2FB3B65C}">
+									<Language>SFX</Language>
+									<AudioFile>BossMaster_start~loopstart.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="239877686"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossMaster_start~loopstart" ID="{F5F1888D-3363-4B3A-823B-284B2FB3B65C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BossMaster_loop_wav" ID="{AA463750-92B9-4B54-9568-855F500C509E}" ShortID="607390812">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{087CC1A0-2086-4B10-B740-2EC143A0A9D9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BossMaster_loop_wav" ID="{2525172A-70D1-4888-987B-8D86CAFAED50}">
+									<Language>SFX</Language>
+									<AudioFile>BossMaster_loop_wav.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="872355316"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BossMaster_loop_wav" ID="{2525172A-70D1-4888-987B-8D86CAFAED50}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="ZeroGravity_Filter" ID="{AE8E0EB6-2797-4C2F-A3F6-637C7EBDB26A}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Stop" ID="{3266031A-B14C-4BFD-A765-8C97CDF37FA7}"/>
+								<CustomState Name="" ID="{F1B300B3-6D81-4345-9B08-0D61E2FD6DAF}" ShortID="145185603">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16" Value="27"/>
+										<Property Name="Lowpass" Type="int16" Value="76"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}"/>
+								<CustomState Name="" ID="{7BE28F87-0FF9-4A77-A477-D2D6983D4EBF}" ShortID="668142057"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="BossMaster_start~loopstart" ID="{419CC810-1CD9-49DE-9241-3E5901886888}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="BossMaster_loop_wav" ID="{AA463750-92B9-4B54-9568-855F500C509E}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

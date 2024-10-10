@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{4D451B2C-295B-430A-B34F-FCBB205F4178}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Critical" ID="{15AD4BA0-F1EC-4189-8524-E7390B25D494}">
+					<ChildrenList>
+						<Action Name="" ID="{F154DC57-34F2-4CBB-B3C2-868AFD7BA5BB}" ShortID="805900278">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Critical_2_Mono" ID="{D029B9FA-323D-45D1-B69C-18CEC832AF8B}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ZeroGravity" ID="{7A80AA2C-1C0A-43D2-8AA8-481798F659EE}">
+					<ChildrenList>
+						<Action Name="" ID="{581CC823-D855-461C-A00F-F7D1C25525E4}" ShortID="875497990">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ZeroGravity_2_0926" ID="{D8E13D22-0647-4C09-A357-3ED3F2193057}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{99BDEB20-0077-4D63-9045-D1F60B7D611C}" ShortID="680701450">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stop" ID="{3266031A-B14C-4BFD-A765-8C97CDF37FA7}" WorkUnitID="{DFF026E8-B101-4073-914B-EA8FF0E88726}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BGM_Boss" ID="{3E2F7DAC-04E0-4032-B017-6D16AF15EAFC}">
+					<ChildrenList>
+						<Action Name="" ID="{85697F1D-896B-4C2E-AC12-9E834EE641D4}" ShortID="673961115">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{0FF948A6-4EA5-4059-B941-AF838A48F80C}" ShortID="362907851">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM" ID="{7A0571F7-72A1-4E27-B059-58B8427C8351}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DDFA2CE6-2D4D-46DD-ADFA-24BA5D4E1EA3}" ShortID="785450392">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}" WorkUnitID="{DFF026E8-B101-4073-914B-EA8FF0E88726}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_ZeroGravity" ID="{3A9F8935-1C35-4BE9-8314-8A01BF406508}">
+					<ChildrenList>
+						<Action Name="" ID="{F55B0417-13DF-4411-A4D8-F288F20AE539}" ShortID="915936444">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Play" ID="{115C0273-07DC-4EA8-BFA9-29B59C53C61E}" WorkUnitID="{DFF026E8-B101-4073-914B-EA8FF0E88726}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0F9E4030-42EB-4707-AB1A-988E4B970F9C}" ShortID="981249717">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ZeroGravity_2_0926" ID="{D8E13D22-0647-4C09-A357-3ED3F2193057}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

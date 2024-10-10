@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C5F4EE89-1A9D-4E98-88C2-29CA68162CB8}" SchemaVersion="119">
+	<MixingSessions>
+		<WorkUnit Name="Default Work Unit" ID="{C5F4EE89-1A9D-4E98-88C2-29CA68162CB8}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="Boss" ID="{D53D4D34-A34F-4829-9BA0-E8C8C346267A}">
+					<ObjectList>
+						<ObjectRef Name="BGM" ID="{7A0571F7-72A1-4E27-B059-58B8427C8351}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+						<ObjectRef Name="ZeroGravity_2_0926" ID="{D8E13D22-0647-4C09-A357-3ED3F2193057}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+						<ObjectRef Name="Critical_2_Mono" ID="{D029B9FA-323D-45D1-B69C-18CEC832AF8B}" WorkUnitID="{16992260-B9DC-4825-84DF-6A44A5464BB7}"/>
+						<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{76149A6A-FA6F-43EF-9500-A6C52C9B75CB}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
+	</MixingSessions>
+</WwiseDocument>
