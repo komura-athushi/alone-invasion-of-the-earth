@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "alone-invasion-of-the-earth-develop-Install_Wwise.sln"
+    "dotnet.defaultSolution": "alone-invasion-of-the-earth.sln"
 }
