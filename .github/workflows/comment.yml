@@ -1,12 +1,11 @@
-name: Approved PR
+name: Comment PR
 
 on:
-  issue_comment:
+  pull_request_review_comment:
     types: [created]
 
 jobs:
   notify:
-    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - name: Discord Message Notify
@@ -14,4 +13,4 @@ jobs:
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          message: "<@&${{ vars.PROGRAMMER_ID }}>\n${{ github.event.issue.user.login }} commented [Pull Request(title: ${{ github.event.issue.title }})](<${{ github.event.issue.html_url }}>)!"
+          message: "<@&${{ vars.PROGRAMMER_ID }}>\n${{ github.event.comment.user.login }} commented [Pull Request(title: ${{ github.event.pull_request.title }})](<${{ github.event.pull_request.html_url }}>)!"
