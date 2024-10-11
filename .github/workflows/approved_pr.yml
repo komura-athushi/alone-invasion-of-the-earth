@@ -6,10 +6,10 @@ on:
 
 jobs:
   notify:
+    if: ${{  github.event.review.state == 'approved' }}
     runs-on: ubuntu-latest
     steps:
       - name: Discord Message Notify
-        if: ${{  github.event.review.state == 'approved' }}
         uses: appleboy/discord-action@v1.0.0
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
