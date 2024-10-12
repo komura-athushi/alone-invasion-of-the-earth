@@ -20,5 +20,8 @@ MonoBehaviour:
   AirResistanceForJumping: 0.995
   Id: 
   Hp: 5
+  CurrentSkillGauge: 0000000000000000
+  RequiredSkillGauge: 64000000e8030000
+  MaxSkillNumber: 2
   Attack: 0
   Defense: 0

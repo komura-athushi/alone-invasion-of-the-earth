@@ -14,6 +14,9 @@ public class PlayerParam : ScriptableObject
     public float AirResistanceForJumping;
     public string Id;
     public int Hp;
+    public int[] CurrentSkillGauge;
+    public int[] RequiredSkillGauge;
+    public int MaxSkillNumber;
     public int Attack;
     public int Defense;
     public float BotDistance;

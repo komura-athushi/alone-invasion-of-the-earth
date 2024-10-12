@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class DataController
 {
-    private const String dataPath = "Data/";    
+    private const String dataPath = "Data/";
     EnemyParam enemyParam;
     GameParam gameParam;
     PlayerParam playerParam;
+    UIParam uiParam;
 
     //シングルトン
     private static DataController instance = null;
@@ -17,10 +18,11 @@ public class DataController
         playerParam = Resources.Load(dataPath + "PlayerParam") as PlayerParam;
         gameParam = Resources.Load(dataPath + "GameParam") as GameParam;
         enemyParam = Resources.Load(dataPath + "EnemyParam") as EnemyParam;
+        uiParam = Resources.Load(dataPath + "UIParam") as UIParam;
     }
     public static DataController GetInstance()
     {
-        if (instance == null) 
+        if (instance == null)
         {
             instance = new DataController();
         }
@@ -37,5 +39,9 @@ public class DataController
     public static GameParam GetGameParam()
     {
         return GetInstance().gameParam;
+    }
+    public static UIParam GetUIParam()
+    {
+        return GetInstance().uiParam;
     }
 }

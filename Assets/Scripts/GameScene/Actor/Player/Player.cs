@@ -8,6 +8,9 @@ using PlayerController;
 public class Player : MonoBehaviour
 {
     int hp;
+    int maxSkillNumber;
+    int[] currentSkillGauge;
+    int[] requiredSkillGauge;
     float moveSpeed;
     float jumpPower;
     float gravity;
@@ -21,18 +24,24 @@ public class Player : MonoBehaviour
     PlayerInput input;
     //プロパティ
     public int GetSetHp { get { return hp; } set { hp = value; } }
+    public int MaxSkillNumber() { return maxSkillNumber; }
+    public int[] CurrentSkillGauge() { return currentSkillGauge; }
+    public int[] RequiredSkillGauge() { return requiredSkillGauge; }
     public float GetMoveSpeed() { return moveSpeed; }
     public float GetGravity() { return gravity; }
     public bool IsAttacking() { return isAttacking; }
     public bool IsZeroGraviting() { return isZeroGraviting; }
     public bool IsDamaged() { return isDamaged; }
     public bool IsGrounded() { return characterController2D.IsGrounded(); }
-    public Vector2 GetVelocity() { return characterController2D.GetVelocity();} 
+    public Vector2 GetVelocity() { return characterController2D.GetVelocity(); }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         hp = DataController.GetPlayerParam().Hp;
+        maxSkillNumber = DataController.GetPlayerParam().MaxSkillNumber;
+        currentSkillGauge = DataController.GetPlayerParam().CurrentSkillGauge;
+        requiredSkillGauge = DataController.GetPlayerParam().RequiredSkillGauge;
         moveSpeed = DataController.GetPlayerParam().MoveSpeed;
         gravity = DataController.GetGameParam().Gravity;
         // 自身にアタッチされているCharacterControllerを取得する
