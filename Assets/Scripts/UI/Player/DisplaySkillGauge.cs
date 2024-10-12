@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DisplaySkillGauge : MonoBehaviour
 {
     // スキルゲージUIの1個当たりの間隔
-    private float skillGaugePaddingRatio = 1.5f;
+    private float skillGaugePaddingRatio;
 
     // スキルの装備個数
     int maxSkillNumber;
@@ -25,6 +25,7 @@ public class DisplaySkillGauge : MonoBehaviour
     int[] requiredSkillGauge;
 
     protected Player player;
+    protected UILayout uILayout;
 
     /// <summary>
     /// ゲージパラメーターの初期化
@@ -32,6 +33,9 @@ public class DisplaySkillGauge : MonoBehaviour
     void InitializeSkillGauge()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        uILayout = GetComponent<UILayout>();
+        //各スキルゲージの間隔
+        skillGaugePaddingRatio = uILayout.SkillGaugePaddingRatio();
         maxSkillNumber = player.MaxSkillNumber();
         skillGauge = new Image[maxSkillNumber];
         currentSkillGauge = new int[maxSkillNumber];
@@ -112,14 +116,6 @@ public class DisplaySkillGauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // マージの際に消す テスト用自動回復
-        for (int i = 0; i < skillGauge.Length; i++)
-        {
-            if (currentSkillGauge[i] < requiredSkillGauge[i])
-            {
-                currentSkillGauge[i]++;
-            }
-        }
 
         for (int i = 0; i < skillGauge.Length; i++)
         {
@@ -139,16 +135,5 @@ public class DisplaySkillGauge : MonoBehaviour
         }
         DrawCurrentSkillGauge();
 
-        // マージの際に消す
-        if (Input.GetKeyDown("1"))
-        {
-
-            UseSkillGauge(0);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-
-            UseSkillGauge(1);
-        }
     }
 }
